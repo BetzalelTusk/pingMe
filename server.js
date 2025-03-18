@@ -12,9 +12,9 @@ app.get("/check", (req, res) => {
   res.send("This is the /check endpoint.");
 });
 
-app.get("/user/:name", (req, res) => {
+app.get("/greet/:name", (req, res) => {
   const userName = req.params.name;
-  res.send("Hello, ", { userName });
+  res.send(`Hello, ${userName}!`);
 });
 
 // Start the server
