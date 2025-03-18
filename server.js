@@ -14,7 +14,7 @@ app.get("/check", (req, res) => {
 
 app.get("/user/:name", (req, res) => {
   const userName = req.params.name;
-  res.send("Hello, " ${userName});
+  res.send("Hello, ", { userName });
 });
 
 // Start the server
