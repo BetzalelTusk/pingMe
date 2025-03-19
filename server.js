@@ -3,6 +3,11 @@ const express = require("express");
 const app = express();
 const PORT = 3000; // Set port as such
 
+app.use((req, rew, next) => {
+  console.log(`Incoming request: ${(req, method)} ${req.url}`);
+  next();
+});
+
 // Define a basic route ("/")
 app.get("/", (req, res) => {
   res.send("Hello, Express is working!");
