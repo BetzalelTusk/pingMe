@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000; // Set port as such
 
-app.use((req, rew, next) => {
+app.use((req, res, next) => {
   req.customMessage = "This message was added by middleware!!";
   next();
 });
