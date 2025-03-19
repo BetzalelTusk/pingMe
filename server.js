@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000; // Set port as such
 
 app.use((req, rew, next) => {
-  console.log(`Incoming request: ${(req, method)} ${req.url}`);
+  req.customMessage = "This message was added by middleware!!";
   next();
 });
 
@@ -19,7 +19,7 @@ app.get("/check", (req, res) => {
 
 app.get("/greet/:name", (req, res) => {
   const userName = req.params.name;
-  res.send(`Hello, ${userName}!`);
+  res.send(`Hello, ${userName}! ${req.customMessage}`);
 });
 
 // Start the server
