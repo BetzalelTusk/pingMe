@@ -5,7 +5,14 @@ const PORT = 3000; // Set port as such
 
 app.use((req, res, next) => {
   req.customMessage = "This message was added by middleware!!";
+  console.log(req.customMessage);
   next();
+});
+
+app.use(express.json()); // Middleware to parst JSON body
+
+app.post("/submit", (req, res) => {
+  const { name, message } = req.body;
 });
 
 // Define a basic route ("/")
